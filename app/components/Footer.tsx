@@ -14,13 +14,13 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <p className="text-text-secondary text-sm">
-              MAGISTRAL STUDIO - PLUS QU'UN SERVICE, UNE EXPÉRIENCE.
+              MAGISTRAL - Génératrice d'innovation digitale et d'infrastructures performantes.
             </p>
             <p className="text-text-secondary text-xs mt-2 flex items-center justify-center gap-1">
-              Fait avec <Heart className="w-3 h-3 text-accent" /> au Cameroun
+              Créé avec <Heart className="w-3 h-3 text-accent" /> pour des projets hors du commun.
             </p>
             <p className="text-text-secondary text-xs mt-4">
-              © {new Date().getFullYear()} Magistral Studio. Tous droits réservés.
+              © {new Date().getFullYear()} MAGISTRAL. Tous droits réservés.
             </p>
           </motion.div>
         </div>

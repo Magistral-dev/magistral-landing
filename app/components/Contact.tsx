@@ -5,15 +5,6 @@ import { contactsData, socialLinks, autoMessages } from "../lib/data";
 import WhatsAppButton from "./WhatsAppButton";
 import { useState } from "react";
 
-const socialIcons: { [key: string]: string } = {
-  Tiktok: "TikTok",
-  Instagram: "Instagram",
-  Linkedin: "Linkedin",
-  Facebook: "Facebook",
-  Twitter: "Twitter",
-  Youtube: "Youtube",
-};
-
 export default function Contact() {
   const [copied, setCopied] = useState<string | null>(null);
 
@@ -33,10 +24,11 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
-            CONTACT RAPIDE
-          </h2>
-          <div className="w-20 h-1 bg-accent mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">CONTACTER MAGISTRAL</h2>
+          <div className="mx-auto h-1 w-24 rounded-full bg-accent"></div>
+          <p className="text-text-secondary mt-4 max-w-2xl mx-auto">
+            Projet digital, infrastructure IT ou accompagnement réseau ? On construit ensemble un système fiable, esthétique et prêt pour l’avenir.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -133,7 +125,7 @@ export default function Contact() {
             </div>
 
             {/* Messages Automatiques */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <h3 className="text-2xl font-bold text-accent mb-4">Messages Automatiques</h3>
               <div className="space-y-4">
                 <div className="bg-secondary p-4 rounded-xl border border-border">
@@ -145,7 +137,7 @@ export default function Contact() {
                   <p className="text-text-secondary text-sm whitespace-pre-line">{autoMessages.reminder}</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

@@ -5,11 +5,11 @@ import { servicesData, contactsData, autoMessages } from "../lib/data";
 import WhatsAppButton from "./WhatsAppButton";
 
 export default function Catalog() {
-  const premiumServices = servicesData.slice(0, 4);
-  const videoService = servicesData[4];
+  const featuredServices = servicesData.slice(0, 6);
+  const highlightedService = servicesData[0];
 
   return (
-    <section id="catalog" className="py-20 bg-secondary">
+    <section id="catalog" className="py-24 bg-primary">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,30 +18,28 @@ export default function Catalog() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
-            NOTRE CATALOGUE
-          </h2>
-          <div className="w-20 h-1 bg-accent mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">OFFRES & PACKS</h2>
+          <div className="mx-auto h-1 w-24 rounded-full bg-accent"></div>
           <p className="text-text-secondary mt-4 max-w-2xl mx-auto">
-            Des services adaptés à tes besoins, à prix étudiant
+            Des solutions sur mesure pour startup, entreprise et projets ambitieux, avec un style futuriste et une livraison maîtrisée.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {premiumServices.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
+          {featuredServices.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-primary rounded-2xl overflow-hidden border border-border hover:border-accent/50 transition-all duration-300"
+              whileHover={{ y: -6 }}
+              className="futuristic-panel rounded-[2rem] overflow-hidden border border-accent/10 hover:border-accent/40 transition-all duration-300"
             >
               <div className="p-6">
                 <h3 className="text-lg font-bold text-text mb-2">{service.title}</h3>
                 <p className="text-text-secondary text-sm mb-4">{service.description}</p>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-4">
                   <span className="text-accent font-bold text-2xl">{service.price}</span>
                   <WhatsAppButton
                     number={contactsData.whatsappBusiness}
@@ -55,21 +53,21 @@ export default function Catalog() {
           ))}
         </div>
 
-        {/* Service Vidéo mis en avant */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-linear-to-r from-primary to-secondary border border-accent/30 rounded-2xl p-6"
+          className="futuristic-panel border border-accent/30 rounded-[2rem] p-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
             <div>
-              <h3 className="text-xl font-bold text-text">{videoService.title}</h3>
-              <p className="text-text-secondary">{videoService.description}</p>
+              <p className="text-text-secondary uppercase tracking-[0.35em] text-xs mb-2">Offre phare</p>
+              <h3 className="text-2xl font-bold text-text">{highlightedService.title}</h3>
+              <p className="text-text-secondary mt-3 max-w-2xl">{highlightedService.description}</p>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-accent font-bold text-2xl">{videoService.price}</span>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <span className="text-accent font-bold text-3xl">{highlightedService.price}</span>
               <WhatsAppButton
                 number={contactsData.whatsappBusiness}
                 message={autoMessages.welcome}
